@@ -1,0 +1,19 @@
+class Solution {
+public:
+    int reverse(int x) {
+        long long int y=x;
+        int k=1;
+        if(y<0) k=-1;
+        y=abs(y);
+        long long int n=0;
+        while(y)
+        {
+            n=n*10+y%10;
+            y/=10;
+        }
+        n*=k;
+        if(n<INT_MIN || n> INT_MAX) return 0;
+        else return (int)n;
+        
+    }
+};
