@@ -1,0 +1,25 @@
+class Solution {
+public:
+    string countAndSay(int n) {
+        string s="1";
+        for(int i=1;i<n;i++) s=func(s);
+        return s;
+    }
+    string func(string s)
+    {
+        string n="";
+        char ch=s[0],k=1;
+        for(int i=1;i<s.length();i++)
+        {
+            if(s[i]==ch) k++;
+            else
+            {
+                n+=to_string(k)+ch;
+                k=1;
+                ch=s[i];
+            }
+        }
+        n+=to_string(k)+ch;
+        return n;
+    }
+};
